@@ -22,7 +22,7 @@ export default function Draft() {
         .then((res) => res.json())
         .then((allCategories) => setCategory(allCategories));
     }
-  
+   
 
   useEffect(() => {
   
@@ -34,7 +34,7 @@ export default function Draft() {
        .then(res => res.json())
        .then(allArticles => {
         setArticles(allArticles)
-        
+
         const filterArticle = allArticles.filter(article => article.shortName === shortname)
         
           setTitle(filterArticle[0].title);
