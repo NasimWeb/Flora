@@ -1,0 +1,11 @@
+.breadcrumbLink.active {
+    color: #3c39e6  !important;
+}
+
+.breadcrumbLink {
+    font-family: "arial";
+    font-size: 18px;
+    font-weight: 700;
+}
+
+  

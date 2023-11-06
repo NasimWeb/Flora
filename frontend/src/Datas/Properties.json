@@ -1,0 +1,66 @@
+[
+
+ {   "id" : 1,
+    "img" : "/./Images/Rectangle 50.png", 
+    "title" : "Luxury Apartment in California",
+    "price" : 250000 ,
+    "beds" : 2 ,
+    "baths" : 2 ,
+    "parking" : 1,
+    "location" : "1901 Thornridge Cir. Shiloh, Hawaii 81063"
+},
+
+{
+    "id" : 2,
+    "img" : "/./Images/Rectangle 50 (1).png" , 
+    "title" : "Luxury Apartment in California",
+    "price" : 175000 ,
+    "beds" : 2 ,
+    "baths" : 2 ,
+    "parking" : 1,
+    "location" : "1901 Thornridge Cir. Shiloh, Hawaii 81063"
+},
+{
+    "id" : 3,
+    "img" : "/./Images/Rectangle 50 (2).png" , 
+    "title" : "Luxury Apartment in California",
+    "price" : 300000 ,
+    "beds" : 2 ,
+    "baths" : 2 ,
+    "parking" : 1,
+    "location" : "1901 Thornridge Cir. Shiloh, Hawaii 81063"
+},
+{
+    "id" : 4,
+    "img" : "/./Images/Rectangle 50 (3).png" , 
+    "title" : "Luxury Apartment in California",
+    "price" : 140000 ,
+    "beds" : 2 ,
+    "baths" : 2 ,
+    "parking" : 1,
+    "location" : "1901 Thornridge Cir. Shiloh, Hawaii 81063"
+},
+{
+    "id" : 5,
+    "img" : "/./Images/Rectangle 50 (4).png" , 
+    "title" : "Luxury Apartment in California",
+    "price" : 500000 ,
+    "beds" : 2 ,
+    "baths" : 2 ,
+    "parking" : 1,
+    "location" : "1901 Thornridge Cir. Shiloh, Hawaii 81063"
+},
+{
+    "id" : 6,
+    "img" : "/./Images/Rectangle 50 (5).png" , 
+    "title" : "Luxury Apartment in California",
+    "price" : 275000 ,
+    "beds" : 2 ,
+    "baths" : 2 ,
+    "parking" : 1,
+    "location" : "1901 Thornridge Cir. Shiloh, Hawaii 81063"
+}
+
+
+
+]

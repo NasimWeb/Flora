@@ -1,0 +1,38 @@
+.btn-primary {
+    background-color: #025595 !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-big {
+    width: 100%;
+    padding: 13px;
+    border-radius: 5px;
+}
+
+.btn-big-md {
+    padding: 13px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.btn-big:hover {
+    background-color: #fff !important;
+    color: #025595 !important;
+}
+
+.btn-big-md:hover {
+    background-color: #fff !important;
+    color: #025595 !important;
+}
+
+.become-real-state {
+    margin-top: 5rem;
+}
+
+.gap-10rem {
+    gap: 10rem;
+}
+
+.gap-20rem {
+    gap: 20rem;
+}

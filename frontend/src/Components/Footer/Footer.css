@@ -1,0 +1,62 @@
+footer {
+    margin-top: 4rem !important;
+}
+
+
+.footer-content {
+font-weight: 400;
+font-size: 16px;
+line-height: 28px;
+color: rgba(18, 24, 29, 0.5);
+}
+
+
+.footer-title {
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+color: #12181D;
+}
+
+footer a {
+    color: #12181D !important;
+}
+
+footer a:hover {
+    color: #12181D !important;
+}
+
+.location {
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+letter-spacing: 0.02em;
+color: #12181D;
+
+}
+
+.footer-icon {
+padding: 12px;
+gap: 10px;
+width: 48px;
+height: 48px;
+background: #025595;
+border-radius: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+cursor: pointer;
+}
+
+
+.newsletter-title {
+   color: #025595 !important ;
+   font-weight: inherit;
+   font-size: larger;
+}
+
+
+.input-form {
+    border : 2px solid #dce2ee !important
+}

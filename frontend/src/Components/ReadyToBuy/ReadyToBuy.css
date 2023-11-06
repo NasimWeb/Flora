@@ -1,0 +1,45 @@
+.ready-to-buy {
+    background-position: top;
+    background-image: linear-gradient(180deg,rgba(150,105,97,0.67) 0%,rgba(2,0,76,0.84) 100%),url(https://www.elegantthemes.com/layouts/wp-content/uploads/2018/04/real-estate-06.jpg)!important;
+
+}
+
+.ready-title {
+    font-size: 30px !important;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.2em;
+    width: 45rem;
+    margin: auto;
+}
+
+.btn-leader {
+    background-color: #fa7f28 !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    color: #ffffff !important;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    border-width: 6px!important;
+    width: 230px;
+    border-color: #fa7f28 !important;
+    color: #ffffff!important;
+    box-shadow: 0px 12px 30px 8px rgba(250,127,40,0.15);
+    transition: all 300ms ease 0ms;
+}
+
+.btn-leader:hover {
+    background-color: #fa7f28 !important
+}
+
+.find-icon {
+    transition: all 2.ms ease-in-out !important;
+}
+
+.btn-leader:hover .find-icon {
+    display: inline !important;
+    transition: all 2.ms ease-in-out !important;
+}
+
+
+

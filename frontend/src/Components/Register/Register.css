@@ -1,0 +1,11 @@
+.to-register:hover {
+    color: #025595 !important;
+}
+
+.btn_success {
+    background-color: green !important;
+}
+
+.btn_error {
+    background-color: red !important;
+}

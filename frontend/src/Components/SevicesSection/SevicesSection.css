@@ -1,0 +1,28 @@
+.services-section {
+    background-color: #ffffff;
+    border-top-width: 5px;
+    border: 1px solid #3c39e6;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-top-width: 18px;
+    border-radius: 15px;
+    box-shadow: 0px 39px 80px -6px rgba(0,0,0,0.1);
+}
+
+
+.btn-listing {
+    color: #3c39e6!important;
+    border-width: 0px!important;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    font-size: 13px;
+    font-family: 'Lato',Helvetica,Arial,Lucida,sans-serif!important;
+    font-weight: 700!important;
+    text-transform: uppercase!important;
+    background-color: rgba(60,57,230,0.03);
+}
+
+.listing-link:hover {
+    background-color: rgba(60,57,230,0.2) !important;
+}

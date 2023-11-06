@@ -1,0 +1,50 @@
+.header-page {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top bottom;
+    padding-block: 200px !important;
+
+}
+
+.header-page-mobile {
+    box-shadow: 0 0 30px rgba(7,51,84,0.17)!important;
+    background-color: #ffffff;
+}
+
+.title-header {
+    letter-spacing: 2px;
+    font-size: 56px !important;
+}
+
+
+.info-page {
+    left: 275px;
+    top: 167px;
+}
+
+
+.search-city {
+    padding-top: 16px!important;
+    padding-right: 16px!important;
+    padding-bottom: 16px!important;
+    padding-left: 16px!important;
+    border: none !important;
+}
+
+.btn-search {
+    font-family: 'Lato',Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #ffffff!important;
+    letter-spacing: 1px;
+    background-color: #3c39e6!important;
+    padding-block: 19px;
+    border: none !important;
+    left: 292px;
+    border-top-left-radius: 0px;
+}
+
+input:focus-visible {
+   outline: none !important;
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id" : 1,
+     "title":"Single Family Home" , 
+     "img":"/./Images/real-estate-11.jpg",
+     "price" : 989000 , 
+      "sqft" : 2503 , 
+      "beds" : 5,
+      "baths" : 3,
+      "avenue" : "564 Elegant Ave." , 
+      "city" : "San Francisco, CA 39244" 
+   },
+  {
+    "id" : 2,
+     "title":"Single Family Home" , 
+     "img":"/./Images/real-estate-12.jpg",
+     "price" : 654000 , 
+      "sqft" : 1654 , 
+      "beds" : 2,
+      "baths" : 3,
+      "avenue" : "564 Elegant Ave." , 
+      "city" : "San Francisco, CA 39244" 
+   },
+  {
+    "id" : 3,
+     "title":"Single Family Home" , 
+     "img":"/./Images/real-estate-13.jpg",
+     "price" : 1012895 , 
+      "sqft" : 2938 , 
+      "beds" : 5,
+      "baths" : 4,
+      "avenue" : "6578 Monarch St." , 
+      "city" : "San Jose, CA 28344" 
+   },
+  {
+    "id" : 4,
+     "title":"Office Space" , 
+     "img":"/./Images/real-estate-14.jpg",
+     "price" : 954000 , 
+      "sqft" : 5452 , 
+       "spaces" : 3,
+      "avenue" : "123 Extra Ct." , 
+      "city" : "San Francisco, CA 39222" 
+   },
+  {
+    "id" : 5,
+     "title":"Condo" , 
+     "img":"/./Images/real-estate-15.jpg",
+     "price" : 302000, 
+      "sqft" : 1854 , 
+       "beds" : 2,
+       "baths" : 1,
+      "avenue" : "8965 Bloom Blvd. #604" , 
+      "city" : "Berkeley, CA 91882" 
+   },
+  {
+    "id" : 6,
+     "title":"Apartment" , 
+     "img":"/./Images/real-estate-16.jpg",
+     "price" : 1800 , 
+      "sqft" : 650  , 
+      "beds" : 1,
+      "baths" : 1,
+      "avenue" : "3542 Blue Sky Dr. #301" , 
+      "city" : "San Francisco, CA 39841" 
+   }
+
+]

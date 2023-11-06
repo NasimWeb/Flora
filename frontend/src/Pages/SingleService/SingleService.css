@@ -1,0 +1,29 @@
+
+.sidebar-content ul a {
+    color: #333;
+    transition: all 500ms ease;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.service-content {
+    color: #9a9a9a;
+    transition: all 500ms ease;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.category-list {
+    padding-left: 10px;
+}
+
+.category-list li {
+    border: 1px solid #9a9a9a;
+    padding: 5px;
+    margin-right: 37px;
+}
+
+.category-list  a.active {
+  color: #001fff  !important;
+}
+

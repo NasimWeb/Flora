@@ -1,0 +1,74 @@
+@media screen and (max-width : 768px) {
+
+   .flora-info {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 20px;
+    
+}
+
+.hero-Title {
+    font-size: 45px !important;
+}
+
+.hero-desc {
+    width: auto !important;
+}
+
+.menu-link {
+    color: black !important;
+}
+.menu-items {
+    flex-direction: column !important;
+}
+
+.userFeedback {
+    flex-direction: column !important;
+    gap: 5px;
+}
+
+}
+
+
+
+
+@media screen and (max-width : 992px) {
+    
+.footer-row {
+    gap: 2rem !important;
+ }
+
+ .desc {
+    width: 100% !important;
+ }
+
+ .copyright {
+    flex-direction: column;
+    gap: 1rem;
+ }
+
+ .servise-section-header{
+    display: contents !important;
+}
+
+
+
+}
+
+
+@media screen and  (max-width : 1200px) {
+
+    .testimonial-img {
+        display: none;
+    }
+
+    .Testimonial-info {
+        padding-inline: 5px !important; 
+        margin-left: 0px !important;
+    }
+    
+}
+
+

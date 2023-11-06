@@ -1,0 +1,61 @@
+.property-box {
+    background: #FFFFFF;
+    /* box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.04), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185); */
+    border-radius: 16px;
+    width: 366px;
+    height: 560px;
+    max-width: 100%;
+    padding: 23px;
+    transition: all 0.25s;
+}
+
+/* .property-box:hover {
+    box-shadow: 0px 0px 50px 0px rgba(17, 17, 28, 0.12);
+} */
+
+
+.price-property {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #025595;
+
+}
+
+
+.title-property {
+    font-weight: 700;
+   font-size: 24px;
+   line-height: 36px;
+   color: #16100D;
+
+}
+
+
+.location {
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 20px;
+   color: #16100D;
+}
+
+.like-icon {
+    position: absolute;
+    top: 38px;
+    right: 33px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    width: 32px;
+    height: 32px; 
+}
+
+.share-icon {
+    
+background: rgba(2, 85, 149, 0.05);
+border-radius: 5px;
+width: 36px;
+height: 36px;
+
+}
+

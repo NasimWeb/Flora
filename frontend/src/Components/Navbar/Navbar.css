@@ -1,0 +1,22 @@
+
+.navbar {
+    background-color: #fff;
+    display: flex;
+   align-items: center;
+   /* padding-block: 20px; */
+   border: 1px solid #ffffff;
+   box-shadow: 0 0 30px rgba(7,51,84,0.17)!important;
+   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-inline: 9rem !important;
+ z-index: 999;
+}
+
+.menuitem {
+    color: #20292f;
+    transition: opacity .4s ease-in-out,background-color .4s ease-in-out;
+    font-weight: 500!important;
+    font-size: 15px;
+}

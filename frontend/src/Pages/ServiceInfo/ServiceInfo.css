@@ -1,0 +1,41 @@
+.bg-listing {
+    background-image: linear-gradient(180deg,#ffffff 0%,#e8eefc 100%)!important;
+
+}
+
+.text-gray {
+    color : #898f99
+}
+
+
+.pb-5 {
+    padding-bottom: 4rem !important;
+}
+
+.text-primary {
+    color: #025595;
+}
+
+.filter-option {
+    background-color: hsla(0, 0%, 37%, 0.092)!important;
+    border: none !important;
+}
+
+
+.filter-option:focus {
+    outline: none !important;
+}
+
+
+.search-property {
+    background-color: hsla(0, 0%, 37%, 0.092)!important;
+    border-radius: 99px;
+    border: none !important;
+}
+
+.icon-search {
+   
+    font-size: 23px;
+    color: #666 !important;
+    cursor: pointer;
+}

@@ -1,0 +1,33 @@
+.title-info {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #16100D;
+}
+
+
+.desc-info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(22, 16, 13, 0.5);
+}
+
+
+.bg-blue {
+    background: #025595;
+box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.04), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185);
+border-radius: 16px;
+}
+
+
+.box-info {
+    width: 366.67px !important;
+    height: 232px;
+    max-width: 100%;
+}
+
+
+.gap-10 {
+    gap: 10px;
+}
