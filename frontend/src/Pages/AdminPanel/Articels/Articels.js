@@ -333,7 +333,7 @@ function Articles() {
                         xs={12}
                         md={12}
                         style={{ padding: "10px" }}
-                        className="d-flex border rounded p-3 align-items-center flex-column flex-lg-row"
+                        className="d-flex border rounded  align-items-center flex-column flex-lg-row"
                         key={article._id}
                       >
                         <Grid
@@ -396,12 +396,16 @@ function Articles() {
                                 </Button>
                              </Link>
                           ) : (
+                            <Link to={`editArticle/${article.shortName}`}>
                             <Button 
                                 className="hover-icon  "
                                 style={{ borderRadius: "100%", minWidth: "30px" }}
+                                
                               >
                                 <EditIcon style={{ color: "#000" }}  />
                                 </Button>
+                            
+                            </Link>
                           )}
                         
                           <Button

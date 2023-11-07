@@ -57,9 +57,6 @@ export default function Draft() {
 //   }
 
 
-
- 
-
   return (
     <>
       <div className="container">

@@ -23,9 +23,9 @@ import Offs from "./Pages/AdminPanel/Offs/Offs";
 import Draft from "./Pages/AdminPanel/Draft/Draft";
 import AdminPanelPrivate from "./Pages/AdminPanelPrivate/AdminPanelPrivate";
 import Tikets from "./Pages/AdminPanel/Tikets/Tikets";
+import EditArticles from "./Pages/AdminPanel/EditArticles/EditArticles";
 
-
-
+ 
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -51,12 +51,13 @@ const routes = [
     {path :'comments' , element : <Comments />},
     {path :'offs' , element : <Offs />},
     {path :'articels/draft/:shortname' , element : <Draft />},
-    {path :'tikets' , element : <Tikets/>}
-   ]
+    {path :'tikets' , element : <Tikets/>},
+    {path :'articels/editArticle/:shortname' , element : <EditArticles />}
+   ] 
 },
 {path : '*' , element : <NotFound />}
 ];
 
-
+   
 
 export default routes
