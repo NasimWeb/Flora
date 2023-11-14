@@ -22,6 +22,7 @@ function App() {
     setUserInfos(userInfo);
   }
 
+  
   const logOut = useCallback(() => {
     setToken(null);
     localStorage.removeItem("user");
