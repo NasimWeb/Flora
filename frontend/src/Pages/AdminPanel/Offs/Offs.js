@@ -52,7 +52,7 @@ export default function Offs() {
   } , [])
 
   function getAllOffs () {
-    fetch('http://localhost:4000/v1/offs' , {
+    fetch('https://node-flora.liara.run/v1/offs' , {
       headers : {
         Authorization : `Bearer ${JSON.parse(localStorage.getItem('user')).token}`
       }
@@ -62,7 +62,7 @@ export default function Offs() {
   }
 
   function getAllCourses  () {
-    fetch('http://localhost:4000/v1/courses')
+    fetch('https://node-flora.liara.run/v1/courses')
     .then(res => res.json())
     .then(allcourses => setCourses(allcourses))
   }
@@ -85,7 +85,7 @@ export default function Offs() {
           text: 'Please select a course!',
         })
        }else{
-        fetch('http://localhost:4000/v1/offs' , {
+        fetch('https://node-flora.liara.run/v1/offs' , {
           method : 'POST', 
           headers : {
             'Content-Type' : 'application/json',
@@ -129,7 +129,7 @@ export default function Offs() {
       showCancelButton : 'true'
     }).then(result => {
       if(result.isConfirmed) {
-        fetch(`http://localhost:4000/v1/offs/${codeId}` , {
+        fetch(`https://node-flora.liara.run/v1/offs/${codeId}` , {
           method : 'DELETE',
           headers : {
             Authorization : `Berear ${JSON.parse(localStorage.getItem('user')).token}  `

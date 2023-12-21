@@ -20,7 +20,7 @@ export default function Comments() {
   }, []);
 
   function getAllComments() {
-    fetch("http://localhost:4000/v1/comments")
+    fetch("https://node-flora.liara.run/v1/comments")
       .then((res) => res.json())
       .then((allComments) => setComments(allComments));
   }
@@ -46,7 +46,7 @@ export default function Comments() {
       confirmButtonText: "sure, delet it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/v1/comments/${commentId}`, {
+        fetch(`https://node-flora.liara.run/v1/comments/${commentId}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${
@@ -74,7 +74,7 @@ export default function Comments() {
   };
 
   const banComment = (commentUserId) => {
-    fetch(`http://localhost:4000/v1/users/ban/${commentUserId}`, {
+    fetch(`https://node-flora.liara.run/v1/users/ban/${commentUserId}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${
@@ -115,7 +115,7 @@ export default function Comments() {
         const commentAnswer = {
           body: result.value,
         };
-        fetch(`http://localhost:4000/v1/comments/answer/${commentId}`, {
+        fetch(`https://node-flora.liara.run/v1/comments/answer/${commentId}`, {
           method: "POST",
           body: JSON.stringify(commentAnswer),
           headers: {
@@ -152,7 +152,7 @@ export default function Comments() {
       showCancelButton: true,
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/v1/comments/accept/${commentId}`, {
+        fetch(`https://node-flora.liara.run/v1/comments/accept/${commentId}`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${
@@ -191,7 +191,7 @@ export default function Comments() {
       showCancelButton: true,
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/v1/comments/reject/${commentId}`, {
+        fetch(`https://node-flora.liara.run/v1/comments/reject/${commentId}`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${

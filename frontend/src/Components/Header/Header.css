@@ -3,6 +3,7 @@
     background-position:center right;
     background-size: contain;
     background-repeat: no-repeat;
+   
 
 }
 
@@ -12,6 +13,12 @@
     height: 100%;
     background-color: #EFF8FF !important;
   
+}
+
+.overlay_header {
+   
+    /* background-color:rgba(0,32,76,.5) ; */
+    background-color: rgba(2, 0, 76, 0.30);
 }
 
 
@@ -40,7 +47,7 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 34px;
-    color: #16100D;
+    /* color: #fff; */
     width: 535px;
     display: inline-block;
 }
@@ -140,7 +147,7 @@
 }
 
 .menu-link {
-    color: #16100D !important;
+    /* color: #fff !important; */
     font-size: 1rem !important;
     font-weight: 500 !important;
 }

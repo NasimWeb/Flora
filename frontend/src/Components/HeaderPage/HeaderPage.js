@@ -23,62 +23,13 @@ export default function HeaderPage({
   };
 
   return (
+
     <>
-      <div
-        className="header-page position-relative d-none d-lg-flex flex-lg-column"
-        style={{
-          height: "300px",
-          backgroundImage: `linear-gradient(180deg,rgba(150,105,97,0.67) 0%,rgba(2,0,76,0.84) 100%),url(${imgPath})`,
-        }}
-      >
 
-        <Navbar />
 
-        <div className="position-absolute info-page text-white ">
-          <h1 className="text-white title-header text-center">{pageTitle}</h1>
-          {
-            desc ? (
-              <p
-              className="text-white mb-3"
-              style={{
-                width: "45rem",
-                lineHeight: "1.8em",
-                fontSize: "20px",
-              }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              lacinia velit a feugiat finibus. Morbi iaculis diam id tellus
-              iaculis, eu pretium metus fermentu
-            </p>
-            ) : (
-              ''
-            )
-          }
+       {/* Mobile Header */}
 
-          {serchSection ? (
-            <div className="d-flex mb-3">
-              <input
-                type="text"
-                className="search-city rounded position-relative"
-                placeholder="Search by City"
-                style={{ width: "367px" }}
-              />
-              <input
-                type="submit"
-                className="btn-search rounded position-absolute"
-              />
-            </div>
-          ) : (
-            ""
-          )}
-
-          {children}
-        </div>
-      </div>
-
-      {/* Mobile Header */}
-
-         <div className="contanier">
+       <div className="contanier">
       <div className="d-flex justify-content-around align-items-center d-lg-none header-page-mobile p-3">
         
         <div className="logo">
@@ -129,6 +80,62 @@ export default function HeaderPage({
           </div>
         </Offcanvas.Body>
       </Offcanvas>
+
+
+
+      <div
+        className="header-page position-relative  d-lg-flex flex-lg-column"
+        style={{
+          height: "300px",
+          backgroundImage: `linear-gradient(180deg,rgba(150,105,97,0.67) 0%,rgba(2,0,76,0.80) 100%),url(${imgPath})`,
+        }}
+      >
+
+        <Navbar />
+
+        <div className=" text-white  ">
+          <h1 className="text-white title-header text-center">{pageTitle}</h1>
+          {
+            desc ? (
+              <p
+              className="text-white mb-3"
+              style={{
+                width: "45rem",
+                lineHeight: "1.8em",
+                fontSize: "20px",
+              }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              lacinia velit a feugiat finibus. Morbi iaculis diam id tellus
+              iaculis, eu pretium metus fermentu
+            </p>
+            ) : (
+              ''
+            )
+          }
+
+          {serchSection ? (
+            <div className="d-flex mb-3">
+              <input
+                type="text"
+                className="search-city rounded position-relative"
+                placeholder="Search by City"
+                style={{ width: "367px" }}
+              />
+              <input
+                type="submit"
+                className="btn-search rounded position-absolute"
+              />
+            </div>
+          ) : (
+            ""
+          )}
+
+          {children}
+        </div>
+      </div>
+
+    
     </>
   );
 }

@@ -15,7 +15,7 @@ export default function TrendingProperties() {
 
   useEffect( () => {
     fetch(
-      "http://localhost:5000/properties"
+      "https://json-server-flora.iran.liara.run/properties"
     )
       .then((res) => res.json())
       .then((properties) => setAllProperties(properties));

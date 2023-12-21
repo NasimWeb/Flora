@@ -16,7 +16,7 @@ export default function Tikets() {
     const [tickets , setTickets] = useState([])
 
   useEffect(() => {
-     fetch('http://localhost:4000/v1/tickets' , {
+     fetch('https://node-flora.liara.run/v1/tickets' , {
         method : 'GET',
         headers : {
             Authorization : `Bearer ${JSON.parse(localStorage.getItem('user')).token}`

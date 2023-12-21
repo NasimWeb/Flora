@@ -13,7 +13,7 @@ export default function Properties() {
 
 
    useEffect(()=> {
-    fetch('http://localhost:5000/properties')
+    fetch('https://json-server-flora.iran.liara.run/properties')
     .then(res => res.json())
     .then(propertie => setAllProperties(propertie))
    } , [])

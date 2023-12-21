@@ -51,7 +51,7 @@ export default function Header() {
 
   async function initCountUp() {
     const countUpModule = await import("countup.js");
-    countUpAnim = new countUpModule.CountUp(countupRef.current, `${infoContext.totalTime}`, {
+    countUpAnim = new countUpModule.CountUp(countupRef.current, `${320000}`, {
       enableScrollSpy: true,
     });
     if (!countUpAnim.error) {
@@ -60,7 +60,7 @@ export default function Header() {
       console.error(countUpAnim.error);
     }
 
-    countUpAnimation = new countUpModule.CountUp(customerCount.current, `${infoContext.usersCount}`, {
+    countUpAnimation = new countUpModule.CountUp(customerCount.current, `${2000}`, {
       enableScrollSpy: true,
     });
     if (!countUpAnimation.error) {
@@ -74,33 +74,34 @@ export default function Header() {
 
   useEffect(() => {
     initCountUp()
-  } ,[infoContext])
+  } ,[])
 
 
 
   return (
     <>
       {/* Desktop Header */}
-      <header className="Header pt-4 overflow-hidden bg-header">
+      <header className="Header  overflow-hidden bg-header">
+        <div >
         <div
           className="container"
         >
-          <nav className=" justify-content-around align-items-center d-none d-lg-flex">
+          <nav className=" justify-content-around align-items-center pt-3 text-light d-none d-lg-flex">
             <div className="logo">
               <Link to="/">
                 <Image fluid src="/./Images/Group 41.png"></Image>
               </Link>
             </div>
             <div className="menu">
-              <ul className="d-flex gap-3">
+              <ul className="d-flex gap-3 ">
                 <NavLink to="/">
-                  <li className="menu-link">Home</li>
+                  <li  className="menu-link">Home</li>
                 </NavLink>
-                <NavLink to="/aboutus">
-                  <li className="menu-link">About Us</li>
+                <NavLink to="/aboutus" >
+                  <li  className="menu-link">About Us</li>
                 </NavLink>
                 <NavLink to="/Category-info/services">
-                  <li className="menu-link position-relative services-menu">
+                  <li  className="menu-link position-relative services-menu">
                     Services
                     <div className="dropdowm">
                       <ul
@@ -144,7 +145,7 @@ export default function Header() {
                   </li>
                 </NavLink>
                 <NavLink to="/contactus">
-                  <li className="menu-link">Contact Us</li>
+                  <li  className="menu-link">Contact Us</li>
                 </NavLink>
               </ul>
             </div>
@@ -165,7 +166,7 @@ export default function Header() {
 
           {/* Mobile Header */}
 
-          <div className="d-flex justify-content-around align-items-center d-lg-none">
+          <div className="d-flex justify-content-around align-items-center d-lg-none mt-5">
             <div className="logo">
               <Link to="/">
                 <Image fluid src="/./Images/Group 41.png"></Image>
@@ -213,7 +214,7 @@ export default function Header() {
           {/* Hero Section */}
           <div className="hero-section d-flex ">
             <div className="d-flex flex-column hero ">
-              <p className="hero-Title mb-4 mt-5">
+              <p  className="hero-Title mb-4 mt-5">
                 <Typewriter
                   onInit={(Typewriter) => {
                     Typewriter.typeString(
@@ -233,8 +234,9 @@ export default function Header() {
                 Imperdiet tempus felis vitae sit est quisque.
               </span>
               <div className="flora-info d-flex col-lg-12 align-items-center justify-content-around mt-4 flex-wrap">
-                <div className="d-flex icon-section flex-wrap">
-                  <div className="header-icon d-flex align-items-center gap-2">
+                <div className="d-flex icon-section flex-wrap justify-content-center">
+                 <div className="d-flex flex-wrap justify-content-center">
+                 <div className="header-icon d-flex align-items-center gap-2">
                     <GoLocation
                       style={{ color: "#025595", fontSize: "30px" }}
                     />
@@ -259,6 +261,7 @@ export default function Header() {
                       <p>Apartment</p>
                     </div>
                   </div>
+                 </div>
                 </div>
                 <button
                   className="serchbox d-flex align-items-center justify-content-center text-white"
@@ -288,36 +291,37 @@ export default function Header() {
               </div>
 
               <div>
-                <div className="d-flex gap-5 mt-4">
+                <div className="d-flex gap-5 mt-4 justify-content-center  justify-content-lg-start">
                   <div className="d-flex flex-column">
                     <span
                       ref={countupRef}
-                      className="text-dark-main"
+                      className="text-dark count"
                       style={{ fontSize: "30px" }}
                     >
                       2000+
                     </span>
-                    <p className="text-dark-main">Property Ready</p>
+                    <p className="text-dark">Property Ready</p>
                   </div>
 
                   <div className="d-flex flex-column">
                     <span
                       ref={customerCount}
-                      className="text-dark-main"
-                      style={{ fontSize: "30px" }}
+                      className="text-dark count"
+                      style={{ fontSize: "30px", }}
                     >
                       500+
                     </span>
-                    <p className="text-dark-main">Happy Custpmer</p>
+                    <p className="text-dark">Happy Custpmer</p>
                   </div>
                 </div>
               </div>
             </div>
-            {/* <div>
+             <div>
               
-            </div> */}
+            </div>
           </div>
           {/* Hero Section End */}
+        </div>
         </div>
       </header>
     </>

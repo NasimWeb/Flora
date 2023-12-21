@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import 'atropos/css'
 
 
+
 function App() {
   
   const router = useRoutes(routes);
@@ -33,7 +34,7 @@ function App() {
   useEffect(() => {
     const localStorageData = JSON.parse(localStorage.getItem("user"));
     if (localStorageData) {
-      fetch("http://localhost:4000/v1/auth/me", {
+      fetch("https://node-flora.liara.run/v1/auth/me", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorageData.token}`,
@@ -47,11 +48,11 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    fetch('http://localhost:4000/v1/infos/index')
-    .then(res => res.json())
-    .then(result => setInfosDetails(result))
-  } ,[])
+  // useEffect(() => {
+  //   fetch('https://node-flora.liara.run/v1/infos/index')
+  //   .then(res => res.json())
+  //   .then(result => setInfosDetails(result))
+  // } ,[])
 
   return (
     <infos.Provider 

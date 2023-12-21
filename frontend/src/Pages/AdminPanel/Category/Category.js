@@ -39,7 +39,7 @@ export default function Category() {
 
   function getCategories () {
     fetch(
-      "http://localhost:5000/categories"
+      "https://json-server-flora.iran.liara.run/categories"
     )
       .then((res) => res.json())
       .then((categories) => {
@@ -69,7 +69,7 @@ export default function Category() {
     };
 
    await fetch(
-      "http://localhost:5000/categories", 
+      "https://json-server-flora.iran.liara.run/categories", 
       { method: "POST",
        headers: {
         "Content-Type": "application/json",
@@ -106,7 +106,7 @@ export default function Category() {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `http://localhost:5000/categories/${categoryId}`,
+          `https://json-server-flora.iran.liara.run/categories/${categoryId}`,
           {
             method: "DELETE",
           }
@@ -143,7 +143,7 @@ export default function Category() {
     if(isCategoryEdite) {
 
       fetch(
-        `http://localhost:5000/categories/${categoryId}`,
+        `https://json-server-flora.iran.liara.run/categories/${categoryId}`,
         {
           method: "PUT",
           headers: {

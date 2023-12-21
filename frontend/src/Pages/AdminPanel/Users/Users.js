@@ -64,7 +64,7 @@ export default function Users() {
 
  function getUsers () {
   const localStorageData = JSON.parse( localStorage.getItem('user'))
-  fetch(`http://localhost:4000/v1/users` , {
+  fetch(`https://node-flora.liara.run/v1/users` , {
    headers : {
      'Authorization' : `Bearer ${localStorageData.token}` 
    }
@@ -85,7 +85,7 @@ export default function Users() {
       phone: formState.inputs.phone.value,
     };
 
-    fetch("http://localhost:4000/v1/auth/register", {
+    fetch("https://node-flora.liara.run/v1/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -123,7 +123,7 @@ export default function Users() {
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/v1/users/${userId}`, {
+        fetch(`https://node-flora.liara.run/v1/users/${userId}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorageData.token}`,
@@ -184,7 +184,7 @@ export default function Users() {
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/v1/users/ban/${userId}`, {
+        fetch(`https://node-flora.liara.run/v1/users/ban/${userId}`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${localStorageData.token}`,

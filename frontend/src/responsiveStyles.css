@@ -72,3 +72,21 @@
 }
 
 
+@media screen and (max-width : 768px) {
+
+    .Typewriter__wrapper {
+        font-size: 19px !important;
+    }
+
+    .Typewriter__cursor {
+        font-size:  19px !important;
+    }
+    
+    .hero-desc {
+       font-size: 19px !important;
+    }
+
+    .count {
+        font-size: 19px !important;
+    }
+}

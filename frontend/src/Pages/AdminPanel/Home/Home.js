@@ -15,7 +15,7 @@ export default function Home() {
   const [infos, setInfos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/v1/infos/p-admin", {
+    fetch("https://node-flora.liara.run/v1/infos/p-admin", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${

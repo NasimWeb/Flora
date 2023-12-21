@@ -37,6 +37,10 @@
     width: 100%;
 }
 
+.border-red {
+    border-color:#e91e63!important;
+}
+
 .btn-form {
     color: #ffffff!important;
     border-color: #3c39e5;

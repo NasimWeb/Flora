@@ -42,7 +42,7 @@ export default function Services() {
 
    function getServices () {
     fetch(
-      "http://localhost:5000/ourListing"
+      "https://json-server-flora.iran.liara.run/ourListing"
     )
       .then((res) => res.json())
       .then((result) => setAllServices(Object.entries(result)));
@@ -68,7 +68,7 @@ export default function Services() {
     if (isServiceEdite) {
 
       fetch(
-        `http://localhost:5000/ourListing/${serviceId}`,
+        `https://json-server-flora.iran.liara.run/ourListing/${serviceId}`,
         {
           method: "PUT",
           headers:{
@@ -138,7 +138,7 @@ export default function Services() {
 
 
     fetch(
-      "http://localhost:5000/ourListing",
+      "https://json-server-flora.iran.liara.run/ourListing",
       {
         method: "POST",
         headers: {
@@ -189,7 +189,7 @@ export default function Services() {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `http://localhost:5000/ourListing/${serviceId}`,
+          `https://json-server-flora.iran.liara.run/ourListing/${serviceId}`,
           {
             method: "DELETE",
           }

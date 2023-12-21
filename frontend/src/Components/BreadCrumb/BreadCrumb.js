@@ -8,7 +8,7 @@ export default function BreadCrumb({prevRout , currentRout , active , prevRoutTo
 
 
   return (
-    <div>
+    <div class='d-flex justify-content-center'>
       
                 <Breadcrumb>
                 <Link to='/' className="breadcrumbLink text-white" style={{color : '#025595 ' , marginRight : '8px'}}>Home</Link>

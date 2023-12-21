@@ -52,13 +52,13 @@ function Articles() {
   }, []);
 
   function getAllArticles() {
-    fetch("http://localhost:4000/v1/articles")
+    fetch("https://node-flora.liara.run/v1/articles")
       .then((res) => res.json())
       .then((allarticles) => setArticles(allarticles));
   }
 
   function getAllCategories() {
-    fetch("http://localhost:4000/v1/category")
+    fetch("https://json-server-flora.iran.liara.run/v1/category")
       .then((res) => res.json())
       .then((allCategories) => setCategories(allCategories));
   }
@@ -90,7 +90,7 @@ function Articles() {
         text: "Select a category for the article",
       })
     }else {
-        fetch('http://localhost:4000/v1/articles' , {
+        fetch('https://node-flora.liara.run/v1/articles' , {
           method :'POST',
           headers : {
             Authorization : `Bearer ${JSON.parse(localStorage.getItem('user')).token}`
@@ -129,7 +129,7 @@ function Articles() {
       showCancelButton : true
     }).then(result => {
       if(result.isConfirmed) {
-        fetch(`http://localhost:4000/v1/articles/${discountId}` , {
+        fetch(`https://node-flora.liara.run/v1/articles/${discountId}` , {
           method : 'DELETE',
           headers : {
             Authorization : `Bearer ${JSON.parse(localStorage.getItem('user')).token}`,
@@ -173,7 +173,7 @@ function Articles() {
         text: "Select a category for the article",
       })
     }else {
-        fetch('http://localhost:4000/v1/articles/draft' , {
+        fetch('https://node-flora.liara.run/v1/articles/draft' , {
           method :'POST',
           headers : {
             Authorization : `Bearer ${JSON.parse(localStorage.getItem('user')).token}`
@@ -198,10 +198,6 @@ function Articles() {
           }
         })
     }
-  
-
-      
-
 
   }
 

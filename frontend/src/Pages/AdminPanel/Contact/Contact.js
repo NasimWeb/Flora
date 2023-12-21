@@ -22,7 +22,7 @@ export default function Contact() {
     } , [])
 
     function getConatctMassage () {
-      fetch('http://localhost:4000/v1/contact')
+      fetch('https://node-flora.liara.run/v1/contact')
       .then(res => res.json())
       .then(result => setAllContactsMessage(result))
     }
@@ -53,7 +53,7 @@ export default function Contact() {
               answer : result.value
             }
 
-             fetch(`http://localhost:4000/v1/contact/answer`,{
+             fetch(`https://node-flora.liara.run/v1/contact/answer`,{
               method : 'POST',
               headers : {
                 'Content-Type' : 'application/json' , 
@@ -90,7 +90,7 @@ export default function Contact() {
         showCancelButton:true,
        }).then((result) => {
             if(result.isConfirmed){
-              fetch(`http://localhost:4000/v1/contact/${contactId}`, {
+              fetch(`https://node-flora.liara.run/v1/contact/${contactId}`, {
                 method : 'DELETE',
                 headers : {
                   'Authorization' : `Bearer ${localStorageData.token}`

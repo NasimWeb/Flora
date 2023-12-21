@@ -20,7 +20,7 @@ const [userEmail , setUserEmail] = useState('')
           email : userEmail
         }
 
-        fetch('http://localhost:4000/v1/newsletters', {
+        fetch('https://node-flora.liara.run/v1/newsletters', {
           method : 'POST',
           headers : {
             'Content-Type' : 'application/json'

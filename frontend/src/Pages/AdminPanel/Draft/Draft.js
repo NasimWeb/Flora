@@ -18,7 +18,7 @@ export default function Draft() {
 
 
   async function getAllCategories() {
-    await  fetch("http://localhost:4000/v1/category")
+    await  fetch("https://node-flora.liara.run/v1/category")
         .then((res) => res.json())
         .then((allCategories) => setCategory(allCategories));
     }
@@ -30,7 +30,7 @@ export default function Draft() {
       getAllCategories();
       // getAllArticles()
 
-       fetch('http://localhost:4000/v1/articles')
+       fetch('https://node-flora.liara.run/v1/articles')
        .then(res => res.json())
        .then(allArticles => {
         setArticles(allArticles)

@@ -73,7 +73,7 @@ export default function Register() {
     };
 
     if (newUser.password === newUser.confirmPassword) {
-      fetch("http://localhost:4000/v1/auth/register", {
+      fetch("https://node-flora.liara.run/v1/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

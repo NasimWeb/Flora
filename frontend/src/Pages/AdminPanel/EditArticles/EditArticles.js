@@ -20,7 +20,7 @@ export default function EditArticles() {
 
 
   async function getAllCategories() {
-    await fetch("http://localhost:4000/v1/category")
+    await fetch("https://node-flora.liara.run/v1/category")
       .then((res) => res.json())
       .then((allCategories) => setCategory(allCategories));
   }
@@ -30,7 +30,7 @@ export default function EditArticles() {
 
         async  function getArticle () {
 
-           await   fetch(`http://localhost:4000/v1/articles/${shortname}`)
+           await   fetch(`https://node-flora.liara.run/v1/articles/${shortname}`)
                 .then((res) => res.json())
                 .then( (article) =>   {
       

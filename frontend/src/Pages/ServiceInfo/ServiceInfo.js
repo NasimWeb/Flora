@@ -11,6 +11,7 @@ import {BiSearchAlt} from 'react-icons/bi'
 import BreadCrumb from "../../Components/BreadCrumb/BreadCrumb";
 import Atropos from 'atropos/react';
 
+
 export default function ServiceInfo() {
 
   const { serviceName } = useParams();
@@ -20,11 +21,11 @@ export default function ServiceInfo() {
   const [status, setStatus] = useState("defualt");
   const [searchTitle , setSerachTitle] = useState(null)
 
-  console.log('ServiceInfo');
+
 
   useEffect(() => {
     fetch(
-      "http://localhost:5000/ourListing"
+      "https://json-server-flora.iran.liara.run/ourListing"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -109,8 +110,8 @@ export default function ServiceInfo() {
               desc="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores"
             />
 
-            <div className="row justify-content-evenly align-items-center mt-5">
-              <div className="col-lg-4">
+            <div className="row justify-content-center align-items-center mt-5">
+              <div className="col-lg-3">
                 <select
                   className="filter-option p-3 px-5"
                   style={{ borderRadius: "99px" }}
@@ -128,7 +129,7 @@ export default function ServiceInfo() {
                   <option value="cheap">cheap Properties</option>
                 </select>
               </div>
-              <div className="col-lg-4">
+              <div className="col-lg-2">
                <div className="d-flex align-items-center">
                 <div className="d-flex align-items-center justify-content-end">
                 {/* <BiSearchAlt className="position-absolute icon-search"  /> */}

@@ -11,7 +11,7 @@ export default function ServiceBox() {
   }, []);
 
   function getCategories() {
-    fetch("http://localhost:5000/categories")
+    fetch("https://json-server-flora.iran.liara.run/categories")
       .then((res) => res.json())
       .then((categories) => {
         setAllCategoryServices(Object.entries(categories));

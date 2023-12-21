@@ -17,7 +17,7 @@ export default function Search() {
 
   useEffect(() => {
     fetch(
-      "http://localhost:5000/ourListing"
+      "https://json-server-flora.iran.liara.run/ourListing"
     )
       .then((res) => res.json())
       .then((data) => {
