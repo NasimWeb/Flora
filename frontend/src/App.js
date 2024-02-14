@@ -46,7 +46,7 @@ function App() {
     } else {
       setIsLogedIn(false);
     }
-  }, []);
+  }, []); 
 
   // useEffect(() => {
   //   fetch('https://node-flora.liara.run/v1/infos/index')
