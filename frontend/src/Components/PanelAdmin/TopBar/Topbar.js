@@ -14,26 +14,35 @@ export default function Topbar({show , setShow , showMobileOffCanvans , setShowM
   const [isShowNotif , setIsShowNotif] = useState(false)
 
   useEffect( () => {
+
+
       const localhostData = JSON.parse(localStorage.getItem('user'))
 
-      async function fetchData() {
-        await fetch('http://localhost:4000/v1/auth/me' , {
-           headers : {
-             Authorization : `Bearer ${localhostData.token}`
-           }
-         }).then(res => {
-           if(res.ok) {
-            return res.json().then( result => setAdminInfo(result))
-           }else {
-             Swal.fire({
-               title : 'you are not admin',
-               icon:'error',
-               timer : 2000
-             })
-           }
-         }) 
-       }
-      fetchData()
+     
+        async function fetchData() {
+
+          await fetch('http://localhost:4000/v1/auth/me' , {
+             headers : {
+               Authorization : `Bearer ${localhostData.token}`
+             }
+           }).then(res => {
+             if(res.ok) {
+              return res.json().then( result => setAdminInfo(result))
+             }else {
+               Swal.fire({
+                 title : 'you are not admin',
+                 icon:'error',
+                 timer : 2000
+               })
+             }
+           }) 
+         }
+         
+         fetchData()
+
+         
+
+
   } , [])
 
 

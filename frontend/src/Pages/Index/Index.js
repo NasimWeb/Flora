@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Index.css'
 import Header from '../../Components/Header/Header'
 import HowWorks from '../../Components/HowWorks/HowWorks'
@@ -10,6 +10,15 @@ import Footer from '../../Components/Footer/Footer'
 import BecomeARealEstate from '../../Components/BecomeARealEstate/BecomeARealEstate'
 
 export default function Index() {
+
+
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+
+
+
   return (
     <div>
       <Header />

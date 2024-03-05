@@ -64,7 +64,7 @@ export default function Category() {
     event.preventDefault()
 
    const newCategory = {
-      title: formState.inputs.Name.value,
+      title: inputName,
       img: categoryImageUrl,
     };
 
@@ -92,6 +92,9 @@ export default function Category() {
     });
   };
 
+
+  const [inputName ,  setInputName] = useState(null)
+  
 
 
   const deletCateory = (categoryId) => {
@@ -132,11 +135,13 @@ export default function Category() {
   };
 
 
+
+
   // Edit Category
   useEffect( () => {
 
     const newEditCategory = {
-      title : formState.inputs.Name.value,
+      title : inputName,
       img: categoryImageUrl,
     };
 
@@ -173,10 +178,8 @@ export default function Category() {
 
 
 
-
   const InputFile = useRef()
 
-  
 
   const readFile = (file) => {
 
@@ -201,6 +204,16 @@ export default function Category() {
 
 
 
+  const mainCategoryedit =  allCategories.filter(category => category[1].id === categoryId).map(category => category[1])
+
+
+  const mainTitleCategory = mainCategoryedit.map(category => {
+    return category
+  })
+
+
+
+  console.log(mainTitleCategory[0]);
 
   return (
     <>
@@ -328,22 +341,17 @@ export default function Category() {
                     <Modal.Body>
                       <form className="d-flex flex-column gap-3 justify-content-center">
                          <div className="d-flex gap-3">
-                         <div className="d-flex">
+                         <div className="d-flex align-items-center gap-3">
                           <label>Name :</label>
-                          <Inputs
+                          <input
+                            // value={mainCategoryedit ?  mainCategoryedit[0].title : ''}
+                            onChange={(e) => setInputName(e.target.value)}
                             placeholder="Name"
-                            id="Name"
-                            element="input"
                             className="input-form "
-                            allValidations={[
-                              requiredValidator(),
-                              minValidator(2),
-                              maxValidator(20),
-                            ]}
-                            OnInputHandler={OnInputHandler}
+                          
                           />
                         </div>
-                         <div className="d-flex">
+                         <div className="d-flex align-items-center gap-3">
                           <label>Image :</label>
                           <input
                             type='file'
@@ -352,12 +360,13 @@ export default function Category() {
                           />
                         </div>
                        </div>
-              
                       </form>
+                      {/* <div className="d-flex justify-content-center align-items-center" style={{width:'300px' , height : '300px'}}><img src={mainCategoryedit[0].img} className="img-fluid" /></div> */}
+
                       <div className="d-flex mt-3 gap-3 justify-content-center">
                         <button
                           className="btn btn-success"
-                          disabled={!formState.isFormValid}
+                          
                           onClick={() => {
                             setIsCategoryEdite(true)
                             setShowEditModal(false)

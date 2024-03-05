@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState , useEffect } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
@@ -19,6 +19,15 @@ import ReCAPTCHA from "react-google-recaptcha";
 import HeaderPage from "../../Components/HeaderPage/HeaderPage";
 
 export default function Login() {
+
+  
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+
+
+
+
   const navigate = useNavigate();
 
   const [formState, OnInputHandler] = UseForm(
@@ -39,7 +48,7 @@ export default function Login() {
 
   const [rememberMe, setRememberMe] = useState(null);
 
-  console.log(rememberMe);
+  
 
   const LoginUser = (event) => {
     event.preventDefault();

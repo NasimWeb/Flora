@@ -12,7 +12,15 @@ export default function CategoryInfo() {
   
   const {categoryName} = useParams();
 
-  console.log('category');
+  
+
+  useEffect(() => {
+   window.scrollTo(0,0)
+  },[])
+  
+
+
+
 
   return (
     <>

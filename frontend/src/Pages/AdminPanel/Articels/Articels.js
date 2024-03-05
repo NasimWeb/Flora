@@ -53,14 +53,26 @@ function Articles() {
 
   function getAllArticles() {
     fetch("https://node-flora.liara.run/v1/articles")
-      .then((res) => res.json())
-      .then((allarticles) => setArticles(allarticles));
+      .then((res) => {
+        if(res.ok) {
+          return res.json().then((allarticles) => setArticles(allarticles));
+        }else {
+          return console.log(res.statusText);
+        }
+      })
+      
   }
 
   function getAllCategories() {
     fetch("https://json-server-flora.iran.liara.run/v1/category")
-      .then((res) => res.json())
-      .then((allCategories) => setCategories(allCategories));
+      .then((res) => {
+        if(res.ok) {
+          return res.json().then((allCategories) => setCategories(allCategories));
+        }else {
+          return console.log(res.statusText);
+        }
+      })
+      
   }
 
 
@@ -78,6 +90,7 @@ function Articles() {
     formData.append('categoryID', categoryId)
 
     
+
 
     if (!articleCover) {
        Swal.fire({

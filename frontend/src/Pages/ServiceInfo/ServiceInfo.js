@@ -21,9 +21,11 @@ export default function ServiceInfo() {
   const [status, setStatus] = useState("defualt");
   const [searchTitle , setSerachTitle] = useState(null)
 
-
+  
+  
 
   useEffect(() => {
+    window.scrollTo(0,0)
     fetch(
       "https://json-server-flora.iran.liara.run/ourListing"
     )
@@ -39,7 +41,9 @@ export default function ServiceInfo() {
   };
 
   useEffect(() => {
+    
     switch (status) {
+
       case "free": {
         const freeProperties = ourlisting.filter(
           (property) => property[1].price === 0

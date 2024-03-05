@@ -6,11 +6,8 @@ export default function Navbar() {
   return (
     <div className="container d-none d-lg-flex">
     <div className="navbar">
-  <Link to="/" className="logo">
-    <img src="/./Images/Group 41.png" />
-  </Link>
   <div className="menus">
-    <ul className="d-flex gap-3 align-items-center">
+    <ul className="d-flex gap-3 align-items-center mb-0">
       <Link to="/">
         <li  className="menuitem">Home</li>
       </Link>
@@ -25,6 +22,9 @@ export default function Navbar() {
       </Link>
     </ul>
   </div>
+  <Link to="/" className="logo">
+    <img src="/./Images/Group 41.png" />
+  </Link>
   </div>
 
 </div>

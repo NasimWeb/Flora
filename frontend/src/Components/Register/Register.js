@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState , useEffect} from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
@@ -19,9 +19,16 @@ import { Link } from "react-router-dom";
 import HeaderPage from "../../Components/HeaderPage/HeaderPage";
 
 export default function Register() {
+
   const onChangeHndler = () => {
     setIsGoogleRecaptchaVerified(true);
   };
+
+  
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+
 
   const [isGoogleRecaptchaVerified, setIsGoogleRecaptchaVerified] =
     useState(false);

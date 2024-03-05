@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './AboutUs.css'
 import Footer from '../../Components/Footer/Footer'
 import HeaderPage from '../../Components/HeaderPage/HeaderPage'
@@ -7,8 +7,17 @@ import ReadyToBuy from '../../Components/ReadyToBuy/ReadyToBuy'
 import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb'
 
 
+
 export default function AboutUs() {
-  console.log('about us');
+
+
+  useEffect(() => {
+    window.scroll(0,0)
+  },[])
+
+
+
+ 
   return (
     <>
     

@@ -11,11 +11,14 @@ import 'atropos/css'
 function App() {
   
   const router = useRoutes(routes);
+ 
 
   const [isLogedIn, setIsLogedIn] = useState(false);
   const [token, setToken] = useState(null);
   const [userInfos, setUserInfos] = useState({});
   const [infosDetails,setInfosDetails] = useState({})
+
+
 
   const logIn = (userInfo, token) => {
     setToken(token);

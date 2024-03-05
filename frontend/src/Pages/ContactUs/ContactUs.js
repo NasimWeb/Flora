@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import "./ContactUs.css";
 import { Link } from "react-router-dom";
@@ -24,6 +24,10 @@ export default function ContactUs() {
   const [whatLookingForSelect , setWhatLookingForSelect] = useState('-1')
   const [contactMethod , setContactMethod] = useState('-1')
 
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
 
 
   return (
