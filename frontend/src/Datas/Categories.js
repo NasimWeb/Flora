@@ -1,4 +1,4 @@
-[
+const categories = [
     {
         "title" : "Our listing",
         "img" : "/./Images/services.jpg"
@@ -16,3 +16,5 @@
         "img" : "/./Images/services5.jpg"
     }
 ]
+
+export default categories

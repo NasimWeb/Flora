@@ -18,7 +18,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Swal from "sweetalert2";
 import "animate.css";
-
+import { Link } from 'react-router-dom';
 
 export default function Users() {
 
@@ -72,6 +72,8 @@ export default function Users() {
   .then(res => res.json())
   .then(allUsers => setAllUsers(allUsers))
  }
+
+ 
 
    const RigisterNewUser = (e) => {
     e.preventDefault()
@@ -227,6 +229,7 @@ export default function Users() {
     });
   };
 
+  
 
   
   return (
@@ -367,7 +370,7 @@ export default function Users() {
                 </TableCell>
                 <TableCell align="right">{user.role}</TableCell>
                 <TableCell align="right">
-                  <button className="btn btn-success">edit</button>
+                 <Link to={`/p-admin/editUser/${user._id}`}><button className="btn btn-success">edit</button></Link>
                 </TableCell>
                 <TableCell align="right">
                   <button
@@ -391,7 +394,6 @@ export default function Users() {
         </Table>
       </TableContainer>
     </div>
-   
    </DataTable>
    
    </>

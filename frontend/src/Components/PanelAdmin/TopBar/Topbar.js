@@ -21,7 +21,7 @@ export default function Topbar({show , setShow , showMobileOffCanvans , setShowM
      
         async function fetchData() {
 
-          await fetch('http://localhost:4000/v1/auth/me' , {
+          await fetch('https://node-flora.liara.run/v1/auth/me' , {
              headers : {
                Authorization : `Bearer ${localhostData.token}`
              }
@@ -38,12 +38,10 @@ export default function Topbar({show , setShow , showMobileOffCanvans , setShowM
            }) 
          }
          
-         fetchData()
-
-         
-
+          fetchData() 
 
   } , [])
+
 
 
   const toggleSidebar = () => {

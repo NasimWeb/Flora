@@ -17,10 +17,18 @@
 }
 
 
-/* .info-page {
-    left: 275px;
-    top: 167px;
-} */
+.hiden {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+
+.transition {
+    transition: all 0.2s ease-out;
+}
 
 
 .search-city {

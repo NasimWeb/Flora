@@ -6,10 +6,10 @@ import { Link, useParams } from "react-router-dom";
 import Pagination from "../../Components/Pagination/Pagination";
 import HeadersSection from "../../Components/HeadersSection/HeadersSections";
 import ReadyToBuy from "../../Components/ReadyToBuy/ReadyToBuy";
-import Sevicessection from "../../Components/SevicesSection/SevicesSection";
-import {BiSearchAlt} from 'react-icons/bi'
 import BreadCrumb from "../../Components/BreadCrumb/BreadCrumb";
 import Atropos from 'atropos/react';
+
+
 
 
 export default function ServiceInfo() {
@@ -31,6 +31,7 @@ export default function ServiceInfo() {
     )
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setOurlisting(Object.entries(data));
         setOrderedList(Object.entries(data));
       });
@@ -144,48 +145,59 @@ export default function ServiceInfo() {
             </div>
 
             <div className="row mt-5">
-              {shownOurListing.map((data) => {
-                return (
-                  
-                  <div
-                    key={data[0]}
-                    style={{ padding: "45px" }}
-                    className="col-lg-4 mt-5"
-                    data-aos="fade-right"
-                    data-aos-offset="300"
-                    data-aos-easing="ease-in-sine"
-                  >
-                    {/* <Link to={`/Single-Service/${data[1].title}`}> */}
-                    <Atropos shadow={false}>
-                      <Link to={'/'}>
-                      <div>
-                        <img className="img-fluid" src={data[1].img} />
+            
+              {
+
+               
+
+                  shownOurListing.map((data) => {
+                    return (
+                      
+                      <div
+                        key={data[0]}
+                        style={{ padding: "45px" }}
+                        className="col-lg-4 mt-5"
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                      >
+                        {/* <Link to={`/Single-Service/${data[1].title}`}> */}
+                        <Atropos shadow={false}>
+                          <Link to={'/'}>
+                          <div>
+                            <img className="img-fluid" src={data[1].img} />
+                          </div>
+                          <div className="details  p-3 text-center bg-white px-5 pb-5">
+                            <p className="text-gray mb-2">{data[1].title}</p>
+                            <h2 className="price">{ data[1].price === 0 ? 'free' : ('$' + data[1].price.toLocaleString())}</h2>
+                            <div className="d-flex justify-content-center gap-1">
+                              <p className="text-gray"> Sq Ft {data[1].sqft}</p>
+                              <p className="text-gray">
+                                {" "}
+                                {data.beds ? `• Beds ${data[1].beds}` : ""}
+                              </p>
+                              <p className="text-gray">
+                                {data.baths ? `• Baths ${data[1].baths}` : ""}
+                              </p>
+                            </div>
+                            <div className="address mt-4">
+                              <p className="text-primary ">{data[1].avenue}</p>
+                              <p className="text-primary ">{data[1].city}</p>
+                            </div>
+                          </div>
+                          </Link>
+                        </Atropos>
+                        {/* </Link> */}
                       </div>
-                      <div className="details  p-3 text-center bg-white px-5 pb-5">
-                        <p className="text-gray mb-2">{data[1].title}</p>
-                        <h2 className="price">{ data[1].price === 0 ? 'free' : ('$' + data[1].price.toLocaleString())}</h2>
-                        <div className="d-flex justify-content-center gap-1">
-                          <p className="text-gray"> Sq Ft {data[1].sqft}</p>
-                          <p className="text-gray">
-                            {" "}
-                            {data.beds ? `• Beds ${data[1].beds}` : ""}
-                          </p>
-                          <p className="text-gray">
-                            {data.baths ? `• Baths ${data[1].baths}` : ""}
-                          </p>
-                        </div>
-                        <div className="address mt-4">
-                          <p className="text-primary ">{data[1].avenue}</p>
-                          <p className="text-primary ">{data[1].city}</p>
-                        </div>
-                      </div>
-                      </Link>
-                    </Atropos>
-                    {/* </Link> */}
-                  </div>
+                    
+                    );
+                  })
+              
                 
-                );
-              })}
+              
+              
+              
+              }
             </div>
             <Pagination
               items={orderedList}

@@ -15,14 +15,9 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import infos from "../../Contexts/infosContext";
 
-
 export default function Header() {
+  const [searchValue, setSearchValue] = useState("");
 
-  
-  const [searchValue , setSearchValue] = useState('')
- 
-
-  
   // const RandomItems = (arr,randomcount) => {
   //   const shuffle = [...arr].sort((a,b) => 0.5 - Math.random())
 
@@ -33,7 +28,6 @@ export default function Header() {
 
   const AuthContext = useContext(authContext);
   const infoContext = useContext(infos);
-
 
   const [show, setShow] = useState(false);
 
@@ -60,9 +54,13 @@ export default function Header() {
       console.error(countUpAnim.error);
     }
 
-    countUpAnimation = new countUpModule.CountUp(customerCount.current, `${2000}`, {
-      enableScrollSpy: true,
-    });
+    countUpAnimation = new countUpModule.CountUp(
+      customerCount.current,
+      `${2000}`,
+      {
+        enableScrollSpy: true,
+      }
+    );
     if (!countUpAnimation.error) {
       countUpAnimation.start();
     } else {
@@ -70,53 +68,60 @@ export default function Header() {
     }
   }
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [servicesCategories, setServicesCategory] = useState();
+
+  function getCategories() {
+    fetch("https://json-server-flora.iran.liara.run/categories")
+      .then((res) => res.json())
+      .then((categories) => {
+        setServicesCategory(categories);
+      });
+  }
 
   useEffect(() => {
-    initCountUp()
-  } ,[])
-
-
+    initCountUp();
+    getCategories();
+  }, []);
 
   return (
     <>
       {/* Desktop Header */}
       <header className="Header  overflow-hidden bg-header">
-        <div >
-        <div
-          className="container"
-        >
-          <nav className=" justify-content-around align-items-center pt-3 text-light d-none d-lg-flex">
-            <div className="logo">
-              <Link to="/">
-                <Image fluid src="/./Images/Group 41.png"></Image>
-              </Link>
-            </div>
-            <div className="menu">
-              <ul className="d-flex gap-3 ">
-                <NavLink to="/">
-                  <li  className="menu-link">Home</li>
-                </NavLink>
-                <NavLink to="/aboutus" >
-                  <li  className="menu-link">About Us</li>
-                </NavLink>
-                <NavLink to="/Category-info/services">
-                  <li  className="menu-link position-relative services-menu">
-                    Services
-                    <div className="dropdowm">
-                      <ul
-                        className="position-absolute end-0 bg-white text-dark p-4 sub-menu rounded d-flex flex-column gap-2"
-                        style={{ width: "17rem" }}
-                      >
-                        <li>
-                          <Link
-                            className="text-dark submenu-link"
-                            to="/Service-info/ourListing"
-                          >
-                            Our listing
-                          </Link>
-                        </li>
-                        <li>
+        <div>
+          <div className="container">
+            <nav className=" justify-content-around align-items-center pt-3 text-light d-none d-lg-flex">
+              <div className="logo">
+                <Link to="/">
+                  <Image fluid src="/./Images/Group 41.png"></Image>
+                </Link>
+              </div>
+              <div className="menu">
+                <ul className="d-flex gap-3 ">
+                  <NavLink to="/">
+                    <li className="menu-link">Home</li>
+                  </NavLink>
+                  <NavLink to="/aboutus">
+                    <li className="menu-link">About Us</li>
+                  </NavLink>
+                  <NavLink to="/Category-info/services">
+                    <li className="menu-link position-relative services-menu">
+                      Services
+                      <div className="dropdowm">
+                        <ul
+                          className="position-absolute end-0 bg-white text-dark p-4 sub-menu rounded d-flex flex-column gap-2"
+                          style={{ width: "17rem" }}
+                        >
+                          <li>
+                            <Link
+                              className="text-dark submenu-link"
+                              to="/Service-info/ourListing"
+                            >
+                              our Listing
+                            </Link>
+                          </li>
+
+                          <li>
                           <Link
                             className="text-dark submenu-link"
                             to="/Service-info/ourSoldsProperties"
@@ -140,188 +145,203 @@ export default function Header() {
                             Search For Properties
                           </Link>
                         </li>
-                      </ul>
-                    </div>
-                  </li>
-                </NavLink>
-                <NavLink to="/contactus">
-                  <li  className="menu-link">Contact Us</li>
-                </NavLink>
-              </ul>
-            </div>
-            <Button className="btn-primary px-5 py-3 " variant="primary">
-              {AuthContext.isLogedIn ? (
-                <Link className="text-white" to="/login">
-                  {" "}
-                  {AuthContext.userInfos.name}
-                </Link>
-              ) : (
-                <Link className="text-white" to="/login">
-                  {}
-                  Login / Register
-                </Link>
-              )}
-            </Button>
-          </nav>
-
-          {/* Mobile Header */}
-
-          <div className="d-flex justify-content-around align-items-center d-lg-none mt-5">
-            <div className="logo">
-              <Link to="/">
-                <Image fluid src="/./Images/Group 41.png"></Image>
-              </Link>
-            </div>
-
-            <Button onClick={showOffcanvance}>
-              <GiHamburgerMenu />
-            </Button>
-          </div>
-
-          <Offcanvas
-            show={show}
-            onHide={handleClose}
-            scroll={true}
-            backdrop={true}
-            name="Enable both scrolling & backdrop"
-            style={{ zIndex: 9999999 }}
-          >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title>
-                <img className="img-fluid" src="/./Images/Group 41.png" />
-              </Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <div className="menu">
-                <ul className="d-flex gap-3 menu-items flex-column">
-                  <NavLink to="/">
-                    <li className="text-dark">Home</li>
-                  </NavLink>
-                  <NavLink to="/aboutus">
-                    <li className="text-dark">About Us</li>
-                  </NavLink>
-                  <NavLink to="/Category-info/service">
-                    <li className="text-dark">Services</li>
+                        </ul>
+                      </div>
+                    </li>
                   </NavLink>
                   <NavLink to="/contactus">
-                    <li className="text-dark">Contact Us</li>
+                    <li className="menu-link">Contact Us</li>
                   </NavLink>
                 </ul>
               </div>
-            </Offcanvas.Body>
-          </Offcanvas>
+              <Button className="btn-primary px-5 py-3 " variant="primary">
+                {AuthContext.isLogedIn ? (
+                  <Link className="text-white" to="/login">
+                    {" "}
+                    {AuthContext.userInfos.name}
+                  </Link>
+                ) : (
+                  <Link className="text-white" to="/login">
+                    {}
+                    Login / Register
+                  </Link>
+                )}
+              </Button>
+            </nav>
 
-          {/* Hero Section */}
-          <div className="hero-section d-flex ">
-            <div className="d-flex flex-column hero ">
-              <p  className="hero-Title mb-4 mt-5">
-                <Typewriter
-                  onInit={(Typewriter) => {
-                    Typewriter.typeString(
-                      " Discover a place you will love to live"
-                    )
-                      .start()
-                      .pauseFor(2000)
-                      .deleteAll();
-                  }}
-                  options={{
-                    loop: true,
-                  }}
-                />
-              </p>
-              <span className="hero-desc mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Imperdiet tempus felis vitae sit est quisque.
-              </span>
-              <div className="flora-info d-flex col-lg-12 align-items-center justify-content-around mt-4 flex-wrap">
-                <div className="d-flex icon-section flex-wrap justify-content-center">
-                 <div className="d-flex flex-wrap justify-content-center">
-                 <div className="header-icon d-flex align-items-center gap-2">
-                    <GoLocation
-                      style={{ color: "#025595", fontSize: "30px" }}
-                    />
-                    <div>
-                      <p>Location</p>
-                      <p>Ahmedabad, India</p>
-                    </div>
-                  </div>
+            {/* Mobile Header */}
 
-                  <div className="header-icon d-flex align-items-center gap-2">
-                    <BiDollar style={{ color: "#025595", fontSize: "30px" }} />
-                    <div>
-                      <p>Price</p>
-                      <p>$1000 - $10,000</p>
-                    </div>
-                  </div>
+            <div className="d-flex  justify-content-around align-items-center d-lg-none mt-5">
+              <div className="logo">
+                <Link to="/">
+                  <Image fluid src="/./Images/Group 41.png"></Image>
+                </Link>
+              </div>
 
-                  <div className="header-icon d-flex align-items-center gap-2">
-                    <FaHome style={{ color: "#025595", fontSize: "30px" }} />
-                    <div>
-                      <p>Type of Property</p>
-                      <p>Apartment</p>
-                    </div>
-                  </div>
-                 </div>
+              <Button onClick={showOffcanvance}>
+                <GiHamburgerMenu />
+              </Button>
+            </div>
+
+            <Offcanvas
+              show={show}
+              onHide={handleClose}
+              scroll={true}
+              backdrop={true}
+              name="Enable both scrolling & backdrop"
+              style={{ zIndex: 9999999 }}
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>
+                  <img className="img-fluid" src="/./Images/Group 41.png" />
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <div className="menu">
+                  <ul className="d-flex gap-3 menu-items flex-column">
+                    <NavLink to="/">
+                      <li className="text-dark">Home</li>
+                    </NavLink>
+                    <NavLink to="/aboutus">
+                      <li className="text-dark">About Us</li>
+                    </NavLink>
+                    <NavLink to="/Category-info/service">
+                      <li className="text-dark">Services</li>
+                    </NavLink>
+                    <NavLink to="/contactus">
+                      <li className="text-dark">Contact Us</li>
+                    </NavLink>
+                    <NavLink to="/login">
+                      <li className="text-dark">Login</li>
+                    </NavLink>
+                    <NavLink to="/register">
+                      <li className="text-dark">Register</li>
+                    </NavLink>
+                  </ul>
                 </div>
-                <button
-                  className="serchbox d-flex align-items-center justify-content-center text-white"
-                  style={{cursor : 'pointer' , outline : 'none'}}
-                 onChange={(e) => setSearchValue(e.target.value)}
-                  onClick={() => {
-                    Swal.fire({
-                      title: "search your property",
-                      icon: "question",
-                      confirmButtonText: "New Property",
-                      input: 'text',
-                      inputLabel: 'Your Search Property',
-                      showCancelButton: true,
-                      inputValue: searchValue,
-                      inputValidator : (searchValue) => {
-                        if(!searchValue) {
-                          return 'You need to write your property!'
-                          }else {
-                            navigate(`/search/${searchValue}`)
+              </Offcanvas.Body>
+            </Offcanvas>
+
+            {/* Hero Section */}
+            <div className="hero-section d-flex ">
+              <div className="d-flex flex-column hero ">
+                <p className="hero-Title mb-4 mt-5">
+                  <Typewriter
+                    onInit={(Typewriter) => {
+                      Typewriter.typeString(
+                        " Discover a place you will love to live"
+                      )
+                        .start()
+                        .pauseFor(2000)
+                        .deleteAll();
+                    }}
+                    options={{
+                      loop: true,
+                    }}
+                  />
+                </p>
+                <span className="hero-desc mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Imperdiet tempus felis vitae sit est quisque.
+                </span>
+                <div className="flora-info d-flex col-lg-12 align-items-center justify-content-around mt-4 flex-wrap">
+                  <div className="d-flex icon-section flex-wrap justify-content-center">
+                    <div className="d-flex flex-wrap justify-content-center">
+                      <div className="header-icon d-flex align-items-center gap-2">
+                        <GoLocation
+                          style={{ color: "#025595", fontSize: "30px" }}
+                        />
+                        <div>
+                          <p>Location</p>
+                          <p>Ahmedabad, India</p>
+                        </div>
+                      </div>
+
+                      <div className="header-icon d-flex align-items-center gap-2">
+                        <BiDollar
+                          style={{ color: "#025595", fontSize: "30px" }}
+                        />
+                        <div>
+                          <p>Price</p>
+                          <p>$1000 - $10,000</p>
+                        </div>
+                      </div>
+
+                      <div className="header-icon d-flex align-items-center gap-2">
+                        <FaHome
+                          style={{ color: "#025595", fontSize: "30px" }}
+                        />
+                        <div>
+                          <p>Type of Property</p>
+                          <p>Apartment</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="serchbox d-flex align-items-center justify-content-center text-white"
+                    style={{ cursor: "pointer", outline: "none" }}
+                    onChange={(e) => setSearchValue(e.target.value)}
+                    onClick={() => {
+                      Swal.fire({
+                        title: "search your property",
+                        icon: "question",
+                        confirmButtonText: "New Property",
+                        input: "text",
+                        inputLabel: "Your Search Property",
+                        showCancelButton: true,
+                        inputValue: searchValue,
+                        inputValidator: (searchValue) => {
+                          if (!searchValue) {
+                            return "You need to write your property!";
+                          } else {
+                            navigate(`/search/${searchValue}`);
                           }
-                      }
-                    })
-                  }}
-               >
-                  <FiSearch   style={{right : '36px' , color :'#fff' , fontSize :'25px' , cursor : 'pointer'}}/>
-                </button>
-              </div>
+                        },
+                      });
+                    }}
+                  >
+                    <FiSearch
+                      style={{
+                        right: "36px",
+                        color: "#fff",
+                        fontSize: "25px",
+                        cursor: "pointer",
+                      }}
+                    />
+                  </button>
+                </div>
 
-              <div>
-                <div className="d-flex gap-5 mt-4 justify-content-center  justify-content-lg-start">
-                  <div className="d-flex flex-column">
-                    <span
-                      ref={countupRef}
-                      className="text-dark count"
-                      style={{ fontSize: "30px" }}
-                    >
-                      2000+
-                    </span>
-                    <p className="text-dark">Property Ready</p>
-                  </div>
+                <div>
+                  <div className="d-flex gap-5 mt-4 justify-content-center  justify-content-lg-start">
+                    <div className="d-flex flex-column">
+                      <span
+                        ref={countupRef}
+                        className="text-dark count"
+                        style={{ fontSize: "30px" }}
+                      >
+                        2000+
+                      </span>
+                      <p className="text-dark">Property Ready</p>
+                    </div>
 
-                  <div className="d-flex flex-column">
-                    <span
-                      ref={customerCount}
-                      className="text-dark count"
-                      style={{ fontSize: "30px", }}
-                    >
-                      500+
-                    </span>
-                    <p className="text-dark">Happy Custpmer</p>
+                    <div className="d-flex flex-column">
+                      <span
+                        ref={customerCount}
+                        className="text-dark count"
+                        style={{ fontSize: "30px" }}
+                      >
+                        500+
+                      </span>
+                      <p className="text-dark">Happy Custpmer</p>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div></div>
             </div>
-             <div>
-              
-            </div>
+            {/* Hero Section End */}
           </div>
-          {/* Hero Section End */}
-        </div>
         </div>
       </header>
     </>

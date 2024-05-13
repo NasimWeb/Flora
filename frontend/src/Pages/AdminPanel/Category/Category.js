@@ -20,19 +20,14 @@ import { useRef } from "react";
 
 export default function Category() {
  
-  const [mainCategory, setMainCategory] = useState([]);
-  const [categoryName, setCategoryName] = useState("");
+  
   const [categoryImageUrl , setCategoryImageUrl] = useState(null)
   const [allCategories, setAllCategories] = useState([]);
   const [showEditModal, setShowEditModal] = useState(false);
-  const [isServiceEdite , setIsServiceEdit] = useState(false)
   const [fullscreen, setFullscreen] = useState(true);
   const [categoryId, setCategoryId] = useState(null)
   const [isCategoryEdite, setIsCategoryEdite] = useState(false)
-
-
  
-
   useEffect(() => {
     getCategories()
   }, []);
@@ -43,12 +38,13 @@ export default function Category() {
     )
       .then((res) => res.json())
       .then((categories) => {
-        setAllCategories(Object.entries(categories));
+        setAllCategories(categories);
       });
   }
 
- 
 
+  
+  
   const [formState, OnInputHandler] = UseForm(
     {
       Name: {
@@ -76,6 +72,7 @@ export default function Category() {
        },
         body: JSON.stringify(newCategory),}
     ).then((res) => {
+      console.log(res);
       if (res.ok) {
         res.json();
         Swal.fire({
@@ -135,7 +132,8 @@ export default function Category() {
   };
 
 
-
+  const [mainCategoryId , setMainCategoryId] = useState('')
+  const [mainCategoryTitle,setMainCategoryTitle] = useState('')
 
   // Edit Category
   useEffect( () => {
@@ -202,18 +200,30 @@ export default function Category() {
 
   }
 
+  let mainCategoryService = []
 
 
-  const mainCategoryedit =  allCategories.filter(category => category[1].id === categoryId).map(category => category[1])
+  mainCategoryService = showEditModal ? allCategories.find( category => category.id === categoryId) : []
+
+    
+console.log(mainCategoryService);
 
 
-  const mainTitleCategory = mainCategoryedit.map(category => {
-    return category
-  })
+   
+
+//  useEffect(() => {
+//   mainCategoryService ? (
+//     localStorage.setItem('mainCategoryId',mainCategoryId),
+//     localStorage.setItem('mainCategoryTitle',mainCategoryTitle)
+    
+//   ) : (
+//     ''
+//   )
+//  },[mainCategoryId,mainCategoryTitle])
+
+// console.log(mainCategoryId);
 
 
-
-  console.log(mainTitleCategory[0]);
 
   return (
     <>
@@ -291,7 +301,7 @@ export default function Category() {
               >
                 <Grid item className="d-flex flex-column" xs={12} md={12}>
                   <p className="main-color fw-500 ">Categoty</p>
-                  <p className="fw-500 ">{category[1].title}</p>
+                  <p className="fw-500 ">{category.title}</p>
                 </Grid>
                 <Grid item className="d-flex gap-2" xs={12} md={12}>
                   <Button
@@ -302,7 +312,8 @@ export default function Category() {
                       style={{ color: "#000" }}
                       onClick={() => {
                         setShowEditModal(true)
-                        setCategoryId(category[1].id)
+                        setCategoryId(category.id)
+                        console.log(category.id);
                       }}
                     />
                   </Button>
@@ -316,7 +327,7 @@ export default function Category() {
                     <DeleteIcon
                       className="dlelet-icon"
                       style={{ color: "rgb(205, 24, 24)" }}
-                      onClick={() => deletCateory(category[1].id)}
+                      onClick={() => deletCateory(category.id)}
                     />
                   </Button>
                 </Grid>
@@ -344,11 +355,10 @@ export default function Category() {
                          <div className="d-flex align-items-center gap-3">
                           <label>Name :</label>
                           <input
-                            // value={mainCategoryedit ?  mainCategoryedit[0].title : ''}
+                            value={mainCategoryService ?  mainCategoryService.title : ''}
                             onChange={(e) => setInputName(e.target.value)}
                             placeholder="Name"
-                            className="input-form "
-                          
+                            className="input-form"
                           />
                         </div>
                          <div className="d-flex align-items-center gap-3">

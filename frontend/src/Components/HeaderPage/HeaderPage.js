@@ -22,6 +22,8 @@ export default function HeaderPage({
     setShow(true);
   };
 
+  const [showDropDown, setShowDropDown] =useState(false)
+
   return (
 
     <>
@@ -68,13 +70,57 @@ export default function HeaderPage({
                 <li className="text-dark">About Us</li>
               </NavLink>
               <NavLink to="/Category-info/service">
-                <li className="text-dark">Services</li>
+                <li className="text-dark">
+                <div className="d-flex gap-2 align-items-center" onClick={() => setShowDropDown(!showDropDown)}>
+                Services {showDropDown ? <i className="fa-solid fa-chevron-down transition"></i> : <i class="fa-solid fa-chevron-up"></i>}
+                </div>
+                <div className={`dropdown ${showDropDown ? 'show' : 'hiden'}`}>
+                  <ul className="d-flex flex-column gap-2 ">
+                  <li>
+                            <Link
+                              className="text-dark submenu-link"
+                              to="/Service-info/ourListing"
+                            >
+                              our Listing
+                            </Link>
+                          </li>
+
+                          <li>
+                          <Link
+                            className="text-dark submenu-link"
+                            to="/Service-info/ourSoldsProperties"
+                          >
+                            Our Solds Properties
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className="text-dark submenu-link"
+                            to="/Service-info/offMarketProperties"
+                          >
+                            Off Market Properties
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className="text-dark submenu-link"
+                            to="/Service-info/searchForProperties"
+                          >
+                            Search For Properties
+                          </Link>
+                        </li>
+                  </ul>
+                </div>
+                </li>
               </NavLink>
-              {/* <NavLink to="/Category-info/newproperty">
-                <li className="text-dark">New Property</li>
-              </NavLink> */}
               <NavLink to="/contactus">
                 <li className="text-dark">Contact Us</li>
+              </NavLink>
+              <NavLink to="/login">
+                <li className="text-dark">Login</li>
+              </NavLink>
+              <NavLink to="/register">
+                <li className="text-dark">register</li>
               </NavLink>
             </ul>
           </div>

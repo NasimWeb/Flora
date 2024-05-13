@@ -24,6 +24,7 @@ import Draft from "./Pages/AdminPanel/Draft/Draft";
 import AdminPanelPrivate from "./Pages/AdminPanelPrivate/AdminPanelPrivate";
 import Tikets from "./Pages/AdminPanel/Tikets/Tikets";
 import EditArticles from "./Pages/AdminPanel/EditArticles/EditArticles";
+import EditUser from "./Pages/EditUser/EditUser";
 
  
 
@@ -42,6 +43,7 @@ const routes = [
   children : [
     {path : '' , element : <Home /> },
     {path : 'users' , element : <Users /> },
+    {path : 'editUser/:userId' , element : <EditUser /> },
     {path : 'articels' , element : <Articels /> },
     {path : 'properties' , element : <PropertiesList />},
     {path : 'menus' , element : <Menus />},

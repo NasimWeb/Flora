@@ -68,18 +68,7 @@ export default function Sidebar({show}) {
                   return ''
                 } 
                 }}` } to=' ' ><TbBrandGoogleAnalytics />{show === true ? ('') : (<span>Main page</span>)} </NavLink></li>
-            <li><NavLink className='text-white sidebar-menu-link' to='properties'><RiFileChart2Line /> {show === true ? ('') : (<span>properties</span>)}</NavLink></li>
-            <li><NavLink className='text-white sidebar-menu-link' to='comments'><RiFileChart2Line /> {show === true ? ('') : (<span>Comments</span>)}</NavLink></li>
-            <li onClick={() => setIsShowSubmenu(!isShowSubmenu)}><NavLink className='text-white sidebar-menu-link' to='javascript:void(0)'><SiTraefikproxy /> {show === true ? ('') : (<><span>Services</span> <MdOutlineKeyboardArrowDown /></>)}</NavLink>
-             {
-              isShowSubmenu && (
-              <ul className='submenu-sidebar p-3 d-flex flex-column gap-2'>
-              <NavLink className='text-white' to='category'><li> Category</li></NavLink>
-              <NavLink className='text-white' to='services'><li> Services</li></NavLink>
-             </ul>
-              )
-             }
-            </li>
+           
           </ul>
     </div>
     <div className='sidebar-menu mt-5'>
@@ -87,14 +76,11 @@ export default function Sidebar({show}) {
           <ul className='d-flex flex-column gap-4'>
             <li><NavLink className='text-white sidebar-menu-link' to='users' ><TbBrandGoogleAnalytics /> {show === true ? ('') : (<span>Users</span>)}</NavLink></li>
             <li><NavLink className='text-white sidebar-menu-link' to='contact'><RiFileChart2Line /> {show === true ? ('') : (<span>Contact Messages</span>)}</NavLink></li>
-            <li><NavLink className='text-white sidebar-menu-link' to='offs'><MdCalendarMonth /> {show === true ? ('') : (<span>Offs</span>)}</NavLink></li>
           </ul>
     </div>
     <div className='sidebar-menu mt-5'>
         <p className='sidebar-title-menu mb-3'>Features</p>
           <ul className='d-flex flex-column gap-4'>
-            <li><NavLink className='text-white sidebar-menu-link' to='tikets' ><TbBrandGoogleAnalytics /> {show === true ? ('') : (<span>Tikets</span>)}</NavLink></li>
-            <li><NavLink className='text-white sidebar-menu-link' to='articels'><RiFileChart2Line /> {show === true ? ('') : (<span>Articles</span>)}</NavLink></li>
             <li onClick={LogOutAdmin}><NavLink className='text-white sidebar-menu-link' to='javascript:void(0)'><BiLogOut  /> {show === true ? ('') : (<span>LogOut</span>)}</NavLink></li>
           </ul>
     </div>

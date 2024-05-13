@@ -95,12 +95,13 @@ export default function Login() {
         const localStorageData = JSON.parse(localStorage.getItem("user"));
 
         if (localStorageData) {
-          fetch("http://localhost:4000/v1/auth/me", {
+          fetch("https://node-flora.liara.run/v1/auth/me", {
             method: "GET",
             headers: {
               Authorization: `Bearer ${localStorageData.token}`,
             },
           }).then((res) => {
+            console.log(res);
             if (res.ok) {
               res.json().then((result) => {
                 console.log(result);
