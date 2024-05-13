@@ -107,7 +107,20 @@ exports.setOnAll = async (req, res, next) => {
       discount,
     });
 
-    return res.json({ msg: "Discounts set successfully ✌️" });
+    return res.json({ message: "Discounts set successfully ✌️" });
+  } catch (error) {
+    next(error);
+  }
+};
+
+exports.removeDiscounts = async (req, res, next) => {
+  try {
+     await courseModel.updateMany({
+      discount: 0, 
+    });
+
+
+    return res.json({ success: true, message: "Discounts removed successfully." });
   } catch (error) {
     next(error);
   }

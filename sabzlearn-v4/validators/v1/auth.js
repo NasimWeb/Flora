@@ -20,7 +20,7 @@ const registerValidator = yup.object().shape({
     .required("نام و نام خانوادگی الزامی می‌باشد")
     .min(3, "نام و نام خانوادگی نباید کمتر از 3 کاراکتر باشد")
     .max(40, "نام و نام خانوادگی نباید بیشتر از 40 کاراکتر باشد"),
-  phone: yup.string().required("شماره تلفن همراه الزامی می‌باشد"),
+  phone: yup.string(),
 });
 
 //* Login Schema

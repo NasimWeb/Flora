@@ -111,7 +111,7 @@ exports.getAnswer = async (req, res, next) => {
     const { id } = req.params;
     const answerTicket = await ticketModel.findOne({ parent: id });
     const ticket = await ticketModel.findOne({ _id: id });
-    if (!answerTicket || !ticket) {
+    if (!ticket) {
       return res.status(404).json({ message: "recheck the ID!" });
     }
 
