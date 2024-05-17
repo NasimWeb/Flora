@@ -6,7 +6,7 @@
     height: 560px;
     max-width: 100%;
     padding: 23px;
-    transition: all 0.25s;
+    transition: all 0.6s ease;
 }
 
 /* .property-box:hover {
@@ -59,3 +59,10 @@ height: 36px;
 
 }
 
+.img-property {
+    transition: all 0.5s ease 0s;
+}
+
+.property-box:hover {
+    transform: translateY(-20px) !important;
+}

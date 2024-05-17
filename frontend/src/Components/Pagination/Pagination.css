@@ -1,0 +1,17 @@
+.page-link {
+    border-radius: 20px !important;
+}
+
+.page-link {
+    border-left-raduis : 20px !important
+}
+
+.active>.page-link {
+    background-color: #fa7f28 !important;
+    border-color: #fa7f28 !important;
+}
+
+.page-link:focus {
+    box-shadow: 0 0 0 0.25rem rgba(253, 97, 13, 0.25);;
+}
+

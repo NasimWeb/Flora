@@ -39,3 +39,30 @@
     color: #666 !important;
     cursor: pointer;
 }
+
+.select-container {
+    position: relative;
+    display: inline-block;
+}
+
+
+.filter-option {
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    padding: 10px 25px;
+    border-radius: 99px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+  } 
+
+
+  .fa-chevron-down {
+    position: absolute;
+    top: 18px;
+    right: 96px;
+    color: #000;
+    cursor: pointer;
+  }
+

@@ -116,9 +116,9 @@ export default function ServiceInfo() {
             />
 
             <div className="row justify-content-center align-items-center mt-5">
-              <div className="col-lg-3">
+              <div className="col-lg-3 position-relative ">
                 <select
-                  className="filter-option p-3 px-5"
+                  className="filter-option p-3 px-5 "
                   style={{ borderRadius: "99px" }}
                   onChange={(e) => {
                     changeStatusHandler(e);
@@ -133,6 +133,7 @@ export default function ServiceInfo() {
                   </option>
                   <option value="cheap">cheap Properties</option>
                 </select>
+                <i class="fa-solid fa-chevron-down"></i>
               </div>
               <div className="col-lg-2">
                <div className="d-flex align-items-center">
@@ -143,12 +144,10 @@ export default function ServiceInfo() {
                </div>
               </div>
             </div>
-
+           
             <div className="row mt-5">
             
               {
-
-               
 
                   shownOurListing.map((data) => {
                     return (
@@ -192,10 +191,6 @@ export default function ServiceInfo() {
                     
                     );
                   })
-              
-                
-              
-              
               
               }
             </div>

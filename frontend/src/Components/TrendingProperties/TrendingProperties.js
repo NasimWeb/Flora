@@ -27,9 +27,9 @@ export default function TrendingProperties() {
     <>
       {allProperties.map((property,index) => {
         return (
-            <Atropos shadow={false} key={index}>
+            
 
-          <div  data-aos="fade-right" data-aos-offset="300"
+          <div   data-aos="fade-right" data-aos-offset="300"
           data-aos-easing="ease-in-sine" className="property-box d-flex flex-column  align-items-center gap-3 position-relative">
 
             <div className="like-icon d-flex justify-content-center align-items-center">
@@ -39,7 +39,7 @@ export default function TrendingProperties() {
             <div className="d-flex flex-column justify-content-center gap-3">
               <Link to={`/`}>
               <Image
-                className="img-fluid"
+                className="img-fluid img-property"
                 src={property.img}
                 title="img-property"
                 alt="img-property"
@@ -80,7 +80,7 @@ export default function TrendingProperties() {
             </div>
           </div>
 
-            </Atropos>
+            
         );
       })}
     </>
