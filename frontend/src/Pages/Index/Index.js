@@ -11,13 +11,9 @@ import BecomeARealEstate from '../../Components/BecomeARealEstate/BecomeARealEst
 
 export default function Index() {
 
-
-
   useEffect(()=>{
     window.scrollTo(0,0)
   },[])
-
-
 
   return (
     <div>

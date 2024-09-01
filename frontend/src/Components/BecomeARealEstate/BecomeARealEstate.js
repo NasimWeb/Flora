@@ -18,13 +18,7 @@ export default function BecomeARealEstate() {
                    <div className="d-flex  align-items-center justify-content-center">
                     <div className="col-lg-10"><input style={{height : '50px'}} placeholder="Email" className="input-form  " id='email' type='email'
                      /></div>
-                    <div className="col-lg-6"><button  style={{height : '50px'}} className="btn btn-primary rounded btn-big" type="submit" onClick={() => {
-                      Swal.fire({
-                        title: 'please check you email :)',
-                        icon: 'success',
-                        timer: 2000
-                      })
-                    }}>Submit</button></div>
+                    <div className="col-lg-6"><button  style={{height : '50px'}} className="btn btn-primary rounded btn-big" type="submit">Submit</button></div>
                    </div>
             </div>
            </div>
