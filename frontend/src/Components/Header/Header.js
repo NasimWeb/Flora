@@ -18,14 +18,6 @@ import infos from "../../Contexts/infosContext";
 export default function Header() {
   const [searchValue, setSearchValue] = useState("");
 
-  // const RandomItems = (arr,randomcount) => {
-  //   const shuffle = [...arr].sort((a,b) => 0.5 - Math.random())
-
-  //    return shuffle.slice(0,randomcount)
-  // }
-
-  //  console.log(RandomItems(topbarLinks,5));
-
   const AuthContext = useContext(authContext);
   const infoContext = useContext(infos);
 
@@ -69,19 +61,9 @@ export default function Header() {
   }
 
   const navigate = useNavigate();
-  const [servicesCategories, setServicesCategory] = useState();
-
-  function getCategories() {
-    fetch("https://json-server-flora.iran.liara.run/categories")
-      .then((res) => res.json())
-      .then((categories) => {
-        setServicesCategory(categories);
-      });
-  }
 
   useEffect(() => {
     initCountUp();
-    getCategories();
   }, []);
 
   return (
@@ -122,29 +104,29 @@ export default function Header() {
                           </li>
 
                           <li>
-                          <Link
-                            className="text-dark submenu-link"
-                            to="/Service-info/ourSoldsProperties"
-                          >
-                            Our Solds Properties
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            className="text-dark submenu-link"
-                            to="/Service-info/offMarketProperties"
-                          >
-                            Off Market Properties
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            className="text-dark submenu-link"
-                            to="/Service-info/searchForProperties"
-                          >
-                            Search For Properties
-                          </Link>
-                        </li>
+                            <Link
+                              className="text-dark submenu-link"
+                              to="/Service-info/ourSoldsProperties"
+                            >
+                              Our Solds Properties
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              className="text-dark submenu-link"
+                              to="/Service-info/offMarketProperties"
+                            >
+                              Off Market Properties
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              className="text-dark submenu-link"
+                              to="/Service-info/searchForProperties"
+                            >
+                              Search For Properties
+                            </Link>
+                          </li>
                         </ul>
                       </div>
                     </li>
@@ -161,7 +143,7 @@ export default function Header() {
                     {AuthContext.userInfos.name}
                   </Link>
                 ) : (
-                  <Link className="text-white" to="/login">
+                  <Link className="text-white" to="/">
                     {}
                     Login / Register
                   </Link>

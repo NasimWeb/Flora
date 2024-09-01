@@ -12,15 +12,11 @@ import { RiInstagramLine } from "react-icons/ri";
 import BreadCrump from "../../Components/BreadCrumb/BreadCrumb";
 import Footer from "../../Components/Footer/Footer";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
-import infos from "../../Contexts/infosContext";
 import ContactUsSchema from "../../Components/vaidationRules/Yup/ContactUsSchema";
 
 
 export default function ContactUs() {
-  const navigate = useNavigate();
-  const infoContext = useContext(infos);
-
+ 
   const [whatLookingForSelect , setWhatLookingForSelect] = useState('-1')
   const [contactMethod , setContactMethod] = useState('-1')
 
@@ -74,33 +70,7 @@ export default function ContactUs() {
                             title: 'Oops...',
                             text: `Please select your contact method and what are looking for ?`
                           })
-                        }else{
-                          fetch("https://node-flora.liara.run/v1/contact", {
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify(newMessage),
-                          }).then((res) => {
-                            res.json();
-                            if (res.ok) {
-                              Swal.fire({
-                                title: "Thankyou for your Feedback",
-                                icon: "success",
-                                confirmButtonText: "Go Home",
-                              }).then((value) => {
-                                navigate("/");
-                              });
-                            } else {
-                              Swal.fire({
-                                title: "something went wrong",
-                                icon: "error",
-                              });
-                            }
-                          });
-
                         }
-
                       }}
                     >
                       {({ values, errors, touched }) => {

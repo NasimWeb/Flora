@@ -10,38 +10,10 @@ import Swal from "sweetalert2";
 export default function Footer() {
 
 
-const [userEmail , setUserEmail] = useState('')
+
 
    
-   
-   const emailNewsLetter = () => {
 
-        const newsletter = {
-          email : userEmail
-        }
-
-        fetch('https://node-flora.liara.run/v1/newsletters', {
-          method : 'POST',
-          headers : {
-            'Content-Type' : 'application/json'
-          },
-          body : JSON.stringify(newsletter)
-        }).then(res => {
-          if (res.ok) {
-            Swal.fire({
-              title: "Thank you for Subscribe our NewsLetter Please Cheack your email  🙂",
-              icon: "success",
-              confirmButtonText: "Close",
-            })
-          }else{
-            Swal.fire({
-              title: "please enter your email",
-              icon: "error",
-              confirmButtonText: "Close",
-            })
-          }
-        })
-  } 
 
  
 
@@ -111,11 +83,10 @@ const [userEmail , setUserEmail] = useState('')
           <div className="d-flex flex-column mt-4 flex-wrap">
               <p className="mb-3 newsletter-title">subscribe to newsletter</p>
               <div className="d-flex align-items-baseline gap-3 flex-wrap">
-                <input  className="input-form" placeholder="email" id='email' type='email' value={userEmail} onChange={(e) => setUserEmail(e.target.value) } />
+                <input  className="input-form" placeholder="email" id='email' type='email'  />
                 <button
                   className={`btn btn-primary rounded btn-big-md `}
                   style={{ cursor: "pointer", width:'50%' }}
-                  onClick={emailNewsLetter}
                 >
                   subscribe
                 </button>
